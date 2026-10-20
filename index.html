@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healing Crystals Directory</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        #searchInput {
+            width: 100%;
+            max-width: 400px;
+            padding: 10px 15px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .card-header h2 {
+            margin: 0;
+            font-size: 1.25rem;
+        }
+        .badge {
+            background-color: #e0e7ff;
+            color: #3730a3;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        .meta-item {
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .description {
+            font-size: 0.9rem;
+            line-height: 1.4;
+            color: #444;
+            margin: 5px 0 0 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.85rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Healing Crystals Directory</h1>
+        <input type="text" id="searchInput" onkeyup="filterStones()" placeholder="Search crystals...">
+    </header>
+
+    <main>
+        <article class="card">
+            <div class="card-header">
+                <h2>Black Tourmaline</h2>
+                <span class="badge">Root Chakra</span>
+            </div>
+            <div class="meta-item"><strong>Primary Energy:</strong> Mental Alignment, Grounding, Boundaries</div>
+            <div class="meta-item"><strong>Cleansing:</strong> Rice, Palo Santo, Moonlight (Avoid Water - Rusts)</div>
+            <p class="description">
+                Rich in iron, this stone acts as a mirror for toxic energies and grounds scattered thoughts. Exceptional for improving concentration, logical problem solving, and setting boundaries.
+            </p>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Healing Crystals Directory. Hosted on GitHub Pages.</p>
+    </footer>
+
+    <script>
+        function filterStones() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.card');
+
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                card.style.display = text.includes(input) ? 'flex' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>
